@@ -73,13 +73,12 @@ void main(void)
   while(1)
     {
       displayedInt ++;
+      if (displayedInt>9999)
+            displayedInt = 0;
       if (getDigits(displayedInt))
       { 
         __delay_ms(1000);
         tm1637UpdateDisplay();
-        if (displayedInt>9999)
-            displayedInt = 0;
-       
       }
     }
 }
@@ -217,7 +216,7 @@ uint8_t tm1637ByteWrite(uint8_t bWrite) {
     
     TRISIO |= 1<<tm1637clkTrisBit;         // Set tris so clk goes high
     __delay_us(100);
-    char tm1637ack = tm1637dio;
+    uint8_t tm1637ack = tm1637dio;
     if (!tm1637ack)
     {
         TRISIO &= ~(1<<tm1637dioTrisBit);  // Clear data tris bit
@@ -238,14 +237,11 @@ uint8_t tm1637ByteWrite(uint8_t bWrite) {
 *********************************************************************************************/
 void initialise()
 {
-    GPIO = 0b00000000; // all pins low by default
-    //trisio = 0b00110100; // TM1637 and 1 wire pins set to input original code
+    GPIO = 0b00000000;             // all pins low by default
     TRISIO = trisConfiguration;
-    
-    ANSEL = 0; // configure A/D inputs as digital I/O
-    CMCON = 7; // comparator off
-
-    OPTION_REG = 0b10000000;   // Set bit 7, disable pullups, otherwise clear OPTION_REG bits
+    ANSEL = 0;                     // configure A/D inputs as digital I/O
+    CMCON = 7;                     // comparator off
+    OPTION_REG = 0b10000000;       // Set bit 7, disable pullups, otherwise clear OPTION_REG bits
  
     // old timer/interrupt/pullup setup was here
 }
