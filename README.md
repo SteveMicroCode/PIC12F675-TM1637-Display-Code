@@ -1,7 +1,7 @@
 # PIC12F675-TM1637-Display-Code
 Demo C code which drives a TM1637 display using a PIC 12F675, compiles using MPLAB XC8 compiler
-A port of copyright code written by Dan C: https://github.com/electro-dan/PIC12F_TM1637_Thermometer
-which was originally compiled with the Boost C compiler (TM1637 parts only). Uploaded with original author permission.
+A port of part of copyright code written by Dan C: https://github.com/electro-dan/PIC12F_TM1637_Thermometer
+which was originally compiled with the Boost C compiler. Uploaded with original author permission.
 Developed and compiled using the MPLAB X IDE v6.05. All code is in a single file, no header dependencies 
 apart from the MPLAB xc.h. It should port to other compilers pretty easily, I have tried to minimise
 MPLAB XC8 dependencies which are mainly PIC register definitions and use of the MPLAB __delay inline function.
