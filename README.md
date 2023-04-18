@@ -8,8 +8,8 @@ MPLAB XC8 dependencies which are mainly PIC register definitions and use of the 
 
 The PIC12F675 is a small chip ideal for driving commercially available TM1637 modules with minimal
 additional board footprint or additional components. As coded timing is using the on-chip oscillator.
-With appropriate adaptation it should be possible to drive displays using more than the 4 digit type 
-used for test purposes by me. Memory resources used by the C code approximate to 50% though there is
+With appropriate adaptation it should be possible to drive displays using more than 4 digits 
+as used for test purposes by me. Memory resources used by the C code approximate to 50% though there is
 headroom to add for example ADC code for analogue inputs or I2C code for interface with other chips.
 
 Steve 4/2023
