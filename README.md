@@ -4,7 +4,7 @@ A port of copywrited code written by Dan C: https://github.com/electro-dan/PIC12
 which was originally compiled with the Boost C compiler (TM1637 parts only). Uploaded with original author permission.
 Developed and compiled using the MPLAB X IDE v6.05. All code is in a single file, no header dependencies 
 apart from the MPLAB xc.h. It should port to other compilers pretty easily, I have tried to minimise
-MPLAB XC8 dependencies which are mainly PIC register definitions and the MPLAB __delay inline function.
+MPLAB XC8 dependencies which are mainly PIC register definitions and use of the MPLAB __delay inline function.
 
 The PIC12F675 is a small chip ideal for driving commercially available TM1637 modules with minimal
 additional board footprint or additional components. As coded timing is using the on-chip oscillator.
