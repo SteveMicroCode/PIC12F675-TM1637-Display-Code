@@ -3,8 +3,8 @@
 // Microchip 12F675/TM1637 ADC and display code written/adapted by Steve Williams
 // for Microchip's MPLAB XC8 compiler. The TM1637 display routines were originally
 // written by electro-dan for the BoostC compiler as part of project, the ADC
-// related coding was written by me
-// https://github.com/electro-dan/PIC12F_TM1637_Thermometer
+// related coding was written by me.
+// See also: https://github.com/electro-dan/PIC12F_TM1637_Thermometer
 // The code reads a single ADC channel AN0(pin7) and could be adapted to read more
 // The main ADC read loop is non-blocking though the TM1637 display writes are not
 // The ADC is read at 1 second intervals. The code leaves it turned on, not power optimised
@@ -450,42 +450,3 @@ void roundDigits(void)
         }
     }
 }
-
-
-
-
-
-
-
-/*void roundDigits(void)
-{
-    uint8_t currentDigit = 3;      // Current digit being processed, 0..3 L->R
-    uint8_t carry = 0;             // Carry is set to add 1 to a digit, carried back to prev digit if necessary
-    while(1)
-    {
-        if (currentDigit==3 && tm1637Data[currentDigit] > 5)    // Set carry at D3 if necessary
-        {    
-            carry =1;
-        }
-        
-        if (currentDigit==3 && tm1637Data[currentDigit]<=9)
-        {
-            carry = 0;
-        }
-  
-        tm1637Data[currentDigit] += carry;                      // Apply any round up
-            
-
-        if (tm1637Data[currentDigit]>9)
-        {
-           //tm1637Data[currentDigit] = 0;
-           carry = 1;
-           currentDigit --; 
-        }
-        else
-        {
-           tm1637Data[currentDigit] = 0;                        // Zero the last digit 
-           break;       // Terminate while loop when no more rounding and no carry back
-        }   
-    }
-}*/
