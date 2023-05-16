@@ -22,7 +22,7 @@ if not needed.
 
 Beware of in circuit programming issues coding for this small PIC given that the programming pins are almost
 inevitably shared with inputs or other circuit components. In particular connecting AN0/ICSPDAT to the
-Vcc power rail via any fairly low inpedance will cause programmer errors. This happens if you use a lowish value
+Vcc power rail via a fairly low impedance will cause programmer errors. This happens if you use a lowish value
 potentiometer as an input voltage source for example. Failed programming can trash the PICs calibration data 
 permanently, you have been warned! Isolate ICSPDAT and ICSPCLK from the power rails when programming.
 
