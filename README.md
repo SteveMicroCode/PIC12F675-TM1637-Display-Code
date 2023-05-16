@@ -6,19 +6,19 @@ Developed and compiled using the MPLAB X IDE v6.05. All code is in a single file
 apart from the MPLAB xc.h. It should port to other compilers pretty easily, I have tried to minimise
 MPLAB XC8 dependencies which are mainly PIC register definitions and use of the MPLAB __delay inline function.
 
+The PIC12F675 is a small chip ideal for driving commercially available TM1637 modules with minimal
+additional board footprint or additional components. As coded timing is using the on-chip oscillator.
+With appropriate adaptation it should be possible to drive displays using more than the 4 digits as 
+were used for test purposes. Memory resources used by the C code approximate to 50% for display only 
+though this allows some headroom to add for example ADC code for analogue inputs or I2C code for 
+interface with other chips.
+
 My most recent commit added example code for PIC12F675 analogue input and TM1637 display of the data.
 A 0-5V signal is converted using the PIC's 10 bit ADC and displayed on the TM1637 rounded to 3 digits.
 Integer maths is used for scaling of the raw ADC data, floating point is not really an option on this 
 chip. Note that rounding adds overhead and as coded in C my ADC example code uses approx 90% of 
 program memory. I am sure the code could be further optimised or the rounding code simply removed
-if not needed. 
-
-The PIC12F675 is a small chip ideal for driving commercially available TM1637 modules with minimal
-additional board footprint or additional components. As coded timing is using the on-chip oscillator.
-With appropriate adaptation it should be possible to drive displays using more than the 4 digit type 
-used for test purposes by me. Memory resources used by the C code approximate to 50% for display only 
-though this allows some headroom to add for example ADC code for analogue inputs or I2C code for interface 
-with other chips.
+if not needed.
 
 Beware of in circuit programming issues coding for this small PIC given that the programming pins are almost
 inevitably shared with inputs or other circuit components. In particular connecting AN0/ICSPDAT to the
