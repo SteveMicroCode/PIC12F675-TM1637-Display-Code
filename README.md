@@ -26,4 +26,7 @@ Vcc power rail via a fairly low impedance will cause programmer errors. This hap
 potentiometer as an input voltage source for example. Failed programming can trash the PICs calibration data 
 permanently, you have been warned! Isolate ICSPDAT and ICSPCLK from the power rails when programming.
 
-Steve 5/2023
+Note that the TM1637 module used can be made to communicate faster than the speed used in the demo code, see
+my description .pdf file
+
+Steve 6/2023
