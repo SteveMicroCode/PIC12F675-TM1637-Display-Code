@@ -29,4 +29,7 @@ permanently, you have been warned! Isolate ICSPDAT and ICSPCLK from the power ra
 Note that the TM1637 module used can be made to communicate faster than the speed used in the demo code, see
 my description .pdf file
 
+For a port of code here to the more powerful PIC12F1840 see also my repository:
+https://github.com/SteveMicroCode/PIC-12F1840-Demo-Code
+
 Steve 6/2023
