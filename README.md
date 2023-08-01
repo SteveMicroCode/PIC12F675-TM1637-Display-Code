@@ -17,8 +17,8 @@ My most recent commit added example code for PIC12F675 analogue input and TM1637
 A 0-5V signal is converted using the PIC's 10 bit ADC and displayed on the TM1637 rounded to 3 digits.
 Integer maths is used for scaling of the raw ADC data, floating point is not really an option on this 
 chip. Note that rounding adds overhead and as coded in C my ADC example code uses approx 90% of 
-program memory. I am sure the code could be further optimised or the rounding code simply removed
-if not needed.
+program memory with basic free XC8. I am sure the code could be further optimised or the rounding code 
+simply removed if not needed.
 
 Beware of in circuit programming issues coding for this small PIC given that the programming pins are almost
 inevitably shared with inputs or other circuit components. In particular connecting AN0/ICSPDAT to the
